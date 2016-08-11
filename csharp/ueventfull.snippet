@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>ueventfull</Title>
+			<Shortcut>ueventfull</Shortcut>
+			<Description>Code snippet for custom UnityEvent-derived type</Description>
+			<Author>Tarocco</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Event name</ToolTip>
+					<Default>SomethingHappened</Default>
+				</Literal>
+			</Declarations>
+      <Imports>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+        <Import>
+          <Namespace>UnityEngine.Events</Namespace>
+        </Import>
+      </Imports>
+			<Code Language="csharp">
+        <![CDATA[public class $name$EventArgs : EventArgs
+        {
+        }
+        
+        [Serializable]
+        public class $name$Event : UnityEvent<object, $name$EventArgs> { }$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
